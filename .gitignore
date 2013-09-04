@@ -2,7 +2,6 @@
 *.rbc
 .bundle
 .config
-.grunt
 .yardoc
 .idea
 InstalledFiles
@@ -18,7 +17,6 @@ test/tmp
 test/version_tmp
 test/css
 test/scss/output-test
-vendor/
 tmp
 *.DS_Store
 marketing/.sass-cache/*

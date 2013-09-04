@@ -3,30 +3,104 @@
 //
 $include-html-type-classes: $include-html-classes !default;
 
+
+@font-face {
+	font-family: "proxima_nova_light";
+	src: url("type/light/proximanova-light-webfont.eot");
+	src: local("☺"),
+		url("type/light/proximanova-light-webfont.woff") format("woff"),
+		url("type/light/proximanova-light-webfont.otf") format("opentype"),
+		url("type/light/proximanova-light-webfont.svg#proximanova-regular-webfont") format("svg");
+}
+
+@font-face {
+	font-family: "proxima_nova_regular";
+	src: url("type/regular/proximanova-regular-webfont.eot");
+	src: local("☺"),
+		url("type/regular/proximanova-regular-webfont.woff") format("woff"),
+		url("type/regular/proximanova-regular-webfont.otf") format("opentype"),
+		url("type/regular/proximanova-regular-webfont.svg#proximanova-regular-webfont") format("svg");
+}
+
+@font-face {
+	font-family: "proxima_nova_semibold";
+	src: url("type/semibold/proximanova-semibold-webfont.eot");
+	src: local("☺"),
+		url("type/semibold/proximanova-semibold-webfont.woff") format("woff"),
+		url("type/semibold/proximanova-semibold-webfont.otf") format("opentype"),
+		url("type/semibold/proximanova-semibold-webfont.svg#proximanova-semibold-webfont") format("svg");
+}
+  
+@font-face {
+	font-family: "proxima_nova_bold";
+	src: url("type/bold/proximanova-bold-webfont.eot");
+	src: local("☺"),
+		url("type/bold/proximanova-bold-webfont.woff") format("woff"),
+		url("type/bold/proximanova-bold-webfont.otf") format("opentype"),
+		url("type/bold/proximanova-bold-webfont.svg#proximanova-bold-webfont") format("svg");
+}
+
+@font-face {
+	font-family: "proxima_nova_extrabold";
+	src: url("type/extrabold/proximanova-extrabold-webfont.eot");
+	src: local("☺"),
+		url("type/extrabold/proximanova-extrabold-webfont.woff") format("woff"),
+		url("type/extrabold/proximanova-extrabold-webfont.otf") format("opentype"),
+		url("type/extrabold/proximanova-extrabold-webfont.svg#proximanova-extrabold-webfont") format("svg");
+}
+
+/* ------ Variables */
+$type-ratio: 1.5; 
+$pwr-2: $type-ratio * $type-ratio;
+$pwr-3: $type-ratio * $type-ratio * $type-ratio;
+$pwr-4: $type-ratio * $type-ratio * $type-ratio * $type-ratio;
+$type-base: 1em; // 16px
+$type-base-px: 16px;
+$line-height-base: $type-ratio;
+$type-margin-bottom: $type-base * $pwr-2;
+
+/* ------ Mixins */
+@mixin type($level) {
+	@if $level == 0 { // 11px
+		//font-size: $type-base-px / $type-ratio;
+		font-size: $type-base / $type-ratio;
+		line-height: $type-base * $pwr-2;
+		margin: $type-base * $pwr-2 0;
+	}	
+	@if $level == 1 { // 16px
+		//font-size: $type-base-px;
+		font-size: $type-base;
+		line-height: $type-ratio;
+		margin: $type-base * $type-ratio 0;
+	}	
+	@if $level == 2 { // 24px
+		//font-size: $type-base-px * $type-ratio;
+		font-size: $type-base * $type-ratio;
+		line-height: $type-base;
+		margin: $type-base 0;
+	}
+	@if $level == 3 { // 36px
+		//font-size: ($type-base-px * $pwr-2);
+		font-size: ($type-base * $pwr-2);
+		line-height: $type-base / $type-ratio * 2;
+		margin: $type-base / $type-ratio 0;
+	}
+	@if $level == 4 { // 54px
+		//font-size: ($type-base-px * $pwr-3);
+		font-size: ($type-base * $pwr-3);
+		line-height: $type-base / $pwr-2 * 3;
+		margin: $type-base / $pwr-2 0;
+	}
+}
+
 // We use these to control header font styles
-$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$header-font-family: "proxima_nova_extrabold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $header-font-weight: bold !default;
 $header-font-style: normal !default;
 $header-font-color: #222 !default;
-$header-line-height: 1.4 !default;
-$header-top-margin: .2em !default;
-$header-bottom-margin: .5em !default;
 $header-text-rendering: optimizeLegibility !default;
 
-// We use these to control header font sizes
-$h1-font-size: em-calc(44) !default;
-$h2-font-size: em-calc(37) !default;
-$h3-font-size: em-calc(27) !default;
-$h4-font-size: em-calc(23) !default;
-$h5-font-size: em-calc(18) !default;
-$h6-font-size: 1em !default;
 
-// These control how subheaders are styled.
-$subheader-line-height: 1.4 !default;
-$subheader-font-color: lighten($header-font-color, 30%) !default;
-$subheader-font-weight: 300 !default;
-$subheader-top-margin: .2em !default;
-$subheader-bottom-margin: .5em !default;
 
 // A general <small> styling
 $small-font-size: 60% !default;
@@ -36,10 +110,10 @@ $small-font-color: lighten($header-font-color, 30%) !default;
 $paragraph-font-family: inherit !default;
 $paragraph-font-weight: normal !default;
 $paragraph-font-size: 1em !default;
-$paragraph-line-height: 1.6 !default;
-$paragraph-margin-bottom: em-calc(20) !default;
-$paragraph-aside-font-size: em-calc(14) !default;
-$paragraph-aside-line-height: 1.35 !default;
+$paragraph-line-height: 1.5 !default;
+$paragraph-margin-bottom: em-calc(24) !default;
+$paragraph-aside-font-size: $paragraph-font-size * 0.75 !default;
+$paragraph-aside-line-height: $paragraph-line-height / 0.75 !default;
 $paragraph-aside-font-style: italic !default;
 $paragraph-text-rendering: optimizeLegibility !default;
 
@@ -70,9 +144,10 @@ $definition-list-margin-bottom: em-calc(12) !default;
 
 // We use these to style blockquotes
 $blockquote-font-color: lighten($header-font-color, 30%) !default;
-$blockquote-padding: em-calc(9 20 0 19) !default;
+$blockquote-margin: em-calc(0 24 24 0) !default;
 $blockquote-border: 1px solid #ddd !default;
-$blockquote-cite-font-size: em-calc(13) !default;
+$blockquote-cite-font-size: $type-base * 0.75 !default;
+$blockquote-cite-line-height: $paragraph-line-height / 0.75;
 $blockquote-cite-font-color: lighten($header-font-color, 20%) !default;
 $blockquote-cite-link-color: $blockquote-cite-font-color !default;
 
@@ -106,20 +181,6 @@ $microformat-abbr-font-decoration: none !default;
 //
 // Typography Placeholders
 //
-
-// These will throw a deprecation warning if used within a media query.
-%lead {
-  font-size: $paragraph-font-size + em-calc(3.5);
-  line-height: 1.6;
-}
-
-%subheader {
-  line-height: $subheader-line-height;
-  color: $subheader-font-color;
-  font-weight: $subheader-font-weight;
-  margin-top: $subheader-top-margin;
-  margin-bottom: $subheader-bottom-margin;
-}
 
 @if $include-html-type-classes != false {
 
@@ -169,41 +230,27 @@ $microformat-abbr-font-decoration: none !default;
     margin-bottom: $paragraph-margin-bottom;
     text-rendering: $paragraph-text-rendering;
 
-    &.lead { @extend %lead; }
-
-    & aside {
+    aside & {
       font-size: $paragraph-aside-font-size;
       line-height: $paragraph-aside-line-height;
       font-style: $paragraph-aside-font-style;
     }
   }
 
-  /* Default header styles */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font-family;
-    font-weight: $header-font-weight;
-    font-style: $header-font-style;
-    color: $header-font-color;
-    text-rendering: $header-text-rendering;
-    margin-top: $header-top-margin;
-    margin-bottom: $header-bottom-margin;
-    line-height: $header-line-height - em-calc(3);
-
-    small {
-      font-size: $small-font-size;
-      color: $small-font-color;
-      line-height: 0;
-    }
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font-family;
+	font-weight: $header-font-weight;
+	font-style: $header-font-style;
+	color: $header-font-color;
+	text-rendering: $header-text-rendering;   
   }
 
-  h1 { font-size: $h1-font-size - em-calc(10); }
-  h2 { font-size: $h2-font-size - em-calc(10); }
-  h3 { font-size: $h3-font-size - em-calc(5); }
-  h4 { font-size: $h4-font-size - em-calc(5); }
-  h5 { font-size: $h5-font-size; }
-  h6 { font-size: $h6-font-size; }
+	h1, .h1 { @include type(3); }
+	h2, .h2 { @include type(2); }
+	h3, .h3 { @include type(1); }
+	.small { @include type(0); }
 
-  .subheader { @extend %subheader; }
 
   hr {
     border: $hr-border-style $hr-border-color;
@@ -310,17 +357,28 @@ $microformat-abbr-font-decoration: none !default;
 
   /* Blockquotes */
   blockquote {
-    margin: 0 0 $paragraph-margin-bottom;
-    padding: $blockquote-padding;
-    border-#{$default-float}: $blockquote-border;
+    margin: 0 0 $paragraph-margin-bottom 64px;    
+	position: relative;	
+
+	&:before {
+		content: '“';
+		position: absolute;	
+		font-size: 122px;
+		line-height: 108px;
+		left: -64px;		
+		text-align: center;
+		width: 48px;
+	}
+	
 
     cite {
-      display: block;
-      font-size: $blockquote-cite-font-size;
-      color: $blockquote-cite-font-color;
-      &:before {
-        content: "\2014 \0020";
-      }
+		display: block; 
+		font-size: $blockquote-cite-font-size;
+		line-height: $blockquote-cite-line-height;
+		color: $blockquote-cite-font-color;
+		&:before {
+		content: "\2014 \0020";		
+	}
 
       a,
       a:visited {
@@ -364,13 +422,7 @@ $microformat-abbr-font-decoration: none !default;
   }
 
 
-  @media #{$small} {
-    h1,h2,h3,h4,h5,h6 { line-height: $header-line-height; }
-    h1 { font-size: $h1-font-size; }
-    h2 { font-size: $h2-font-size; }
-    h3 { font-size: $h3-font-size; }
-    h4 { font-size: $h4-font-size; }
-  }
+
 
   // Only include these styles if you want them.
   @if $include-print-styles {

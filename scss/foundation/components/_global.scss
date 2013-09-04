@@ -207,7 +207,7 @@ $em-base: 16px !default;
 // We use these to control various global styles
 $body-bg: #fff !default;
 $body-font-color: #222 !default;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$body-font-family: "proxima_nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $body-font-weight: normal !default;
 $body-font-style: normal !default;
 
@@ -260,22 +260,6 @@ $large: "only screen and (min-width:#{$large-screen})" !default;
 $landscape: "only screen and (orientation: landscape)" !default;
 $portrait: "only screen and (orientation: portrait)" !default;
 
-// Used to provide media query values for javascript components.
-meta.foundation-mq-small {
-  font-family: $small;
-  width: $small-screen;
-}
-
-meta.foundation-mq-medium {
-  font-family: $medium;
-  width: $medium-screen;
-}
-
-meta.foundation-mq-large {
-  font-family: $large;
-  width: $large-screen;
-}
-
 //We use this as cursors values for enabling the option of having custom cursors in the whole site's stylesheet
 $cursor-crosshair-value: crosshair !default;
 $cursor-default-value: default !default;
@@ -305,7 +289,7 @@ $cursor-text-value: text !default;
     font-family: $body-font-family;
     font-weight: $body-font-weight;
     font-style: $body-font-style;
-    line-height: 1; // Set to $base-line-height to take on browser default of 150%
+    line-height: $base-line-height; // Set to $base-line-height to take on browser default of 150%
     position: relative;
     cursor: $cursor-default-value;
   }
@@ -324,22 +308,16 @@ a:hover { cursor: $cursor-pointer-value; }
   embed { height: 100%; }
   img { -ms-interpolation-mode: bicubic; }
 
-  #map_canvas,
-  .map_canvas {
-    img,
-    embed,
-    object { max-width: none !important;
-    }
-  }
 
-  // Miscellaneous useful HTML classes
-  .left         { float: left !important; }
-  .right        { float: right !important; }
-  .text-left    { text-align: left !important; }
-  .text-right   { text-align: right !important; }
-  .text-center  { text-align: center !important; }
-  .text-justify { text-align: justify !important; }
-  .hide         { display: none; }
+
+	// Miscellaneous useful HTML classes
+	.left         { float: left !important; }
+	.right        { float: right !important; }
+	.text-left    { text-align: left !important; }
+	.text-right   { text-align: right !important; }
+	.text-center  { text-align: center !important; }
+	.text-justify { text-align: justify !important; }
+	.hide         { display: none; }
 
   // Font smoothing
   // Antialiased font smoothing works best for light text on a dark background.
@@ -347,20 +325,20 @@ a:hover { cursor: $cursor-pointer-value; }
   // Note this only applies to webkit-based desktop browsers on the Mac.
   .antialiased { -webkit-font-smoothing: antialiased; }
 
-  // Get rid of gap under images by making them display: inline-block; by default
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
+	// Get rid of gap under images by making them display: inline-block; by default
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
 
-  //
-  // Global resets for forms
-  //
+	//
+	// Global resets for forms
+	//
 
-  // Make sure textarea takes on height automatically
-  textarea { height: auto; min-height: 50px; }
+	// Make sure textarea takes on height automatically
+	textarea { height: auto; min-height: 50px; }
 
-  // Make select elements 100% width by default
-  select { width: 100%; }
+	// Make select elements 100% width by default
+	select { width: 100%; }
 
 }

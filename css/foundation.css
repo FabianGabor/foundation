@@ -1,0 +1,502 @@
+@charset "UTF-8";
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 100%;
+}
+
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: "proxima_nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 150%;
+  position: relative;
+  cursor: default;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:focus {
+  outline: none;
+}
+
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+object,
+embed {
+  height: 100%;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.hide {
+  display: none;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+select {
+  width: 100%;
+}
+
+@font-face {
+  font-family: "proxima_nova_light";
+  src: url("type/light/proximanova-light-webfont.eot");
+  src: local("☺"), url("type/light/proximanova-light-webfont.woff") format("woff"), url("type/light/proximanova-light-webfont.otf") format("opentype"), url("type/light/proximanova-light-webfont.svg#proximanova-regular-webfont") format("svg");
+}
+
+@font-face {
+  font-family: "proxima_nova_regular";
+  src: url("type/regular/proximanova-regular-webfont.eot");
+  src: local("☺"), url("type/regular/proximanova-regular-webfont.woff") format("woff"), url("type/regular/proximanova-regular-webfont.otf") format("opentype"), url("type/regular/proximanova-regular-webfont.svg#proximanova-regular-webfont") format("svg");
+}
+
+@font-face {
+  font-family: "proxima_nova_semibold";
+  src: url("type/semibold/proximanova-semibold-webfont.eot");
+  src: local("☺"), url("type/semibold/proximanova-semibold-webfont.woff") format("woff"), url("type/semibold/proximanova-semibold-webfont.otf") format("opentype"), url("type/semibold/proximanova-semibold-webfont.svg#proximanova-semibold-webfont") format("svg");
+}
+
+@font-face {
+  font-family: "proxima_nova_bold";
+  src: url("type/bold/proximanova-bold-webfont.eot");
+  src: local("☺"), url("type/bold/proximanova-bold-webfont.woff") format("woff"), url("type/bold/proximanova-bold-webfont.otf") format("opentype"), url("type/bold/proximanova-bold-webfont.svg#proximanova-bold-webfont") format("svg");
+}
+
+@font-face {
+  font-family: "proxima_nova_extrabold";
+  src: url("type/extrabold/proximanova-extrabold-webfont.eot");
+  src: local("☺"), url("type/extrabold/proximanova-extrabold-webfont.woff") format("woff"), url("type/extrabold/proximanova-extrabold-webfont.otf") format("opentype"), url("type/extrabold/proximanova-extrabold-webfont.svg#proximanova-extrabold-webfont") format("svg");
+}
+
+/* ------ Variables */
+/* ------ Mixins */
+/* Typography resets */
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+}
+
+/* Default Link Styles */
+a {
+  color: #2ba6cb;
+  text-decoration: none;
+  line-height: inherit;
+}
+a:hover, a:focus {
+  color: #2795b6;
+}
+a img {
+  border: none;
+}
+
+/* Default paragraph styles */
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  text-rendering: optimizeLegibility;
+}
+aside p {
+  font-size: 0.75em;
+  line-height: 2;
+  font-style: italic;
+}
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima_nova_extrabold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #222222;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-size: 2.25em;
+  line-height: 1.33333em;
+  margin: 0.66667em 0;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 1em 0;
+}
+
+h3, .h3 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 1.5em 0;
+}
+
+.small {
+  font-size: 0.66667em;
+  line-height: 2.25em;
+  margin: 2.25em 0;
+}
+
+hr {
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
+}
+
+/* Helpful Typography Defaults */
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+small {
+  font-size: 60%;
+  line-height: inherit;
+}
+
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: bold;
+  color: #7f0a0c;
+}
+
+/* Lists */
+ul,
+ol,
+dl {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  list-style-position: outside;
+  font-family: inherit;
+}
+
+ul, ol {
+  margin-left: 0;
+}
+ul.no-bullet, ol.no-bullet {
+  margin-left: 0;
+}
+
+/* Unordered Lists */
+ul li ul,
+ul li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+  font-size: 1em;
+  /* Override nested font-size change */
+}
+ul.square li ul, ul.circle li ul, ul.disc li ul {
+  list-style: inherit;
+}
+ul.square {
+  list-style-type: square;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.disc {
+  list-style-type: disc;
+}
+ul.no-bullet {
+  list-style: none;
+}
+
+/* Ordered Lists */
+ol li ul,
+ol li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+}
+
+/* Definition Lists */
+dl dt {
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+dl dd {
+  margin-bottom: 0.75em;
+}
+
+/* Abbreviations */
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #222222;
+  border-bottom: 1px dotted #dddddd;
+  cursor: help;
+}
+
+abbr {
+  text-transform: none;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 0 0 1.5em 64px;
+  position: relative;
+}
+blockquote:before {
+  content: '“';
+  position: absolute;
+  font-size: 122px;
+  line-height: 108px;
+  left: -64px;
+  text-align: center;
+  width: 48px;
+}
+blockquote cite {
+  display: block;
+  font-size: 0.75em;
+  line-height: 2;
+  color: #555555;
+}
+blockquote cite:before {
+  content: "\2014 \0020";
+}
+blockquote cite a,
+blockquote cite a:visited {
+  color: #555555;
+}
+
+blockquote,
+blockquote p {
+  line-height: 1.5;
+  color: #6f6f6f;
+}
+
+/* Microformats */
+.vcard {
+  display: inline-block;
+  margin: 0 0 1.25em 0;
+  border: 1px solid #dddddd;
+  padding: 0.625em 0.75em;
+}
+.vcard li {
+  margin: 0;
+  display: block;
+}
+.vcard .fn {
+  font-weight: bold;
+  font-size: 0.9375em;
+}
+
+.vevent .summary {
+  font-weight: bold;
+}
+.vevent abbr {
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  padding: 0 0.0625em;
+}
+
+/*
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+*/
+.print-only {
+  display: none !important;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .hide-on-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .hide-for-print {
+    display: none !important;
+  }
+
+  .show-for-print {
+    display: inherit !important;
+  }
+}
+ /*
+  "foundation/components/buttons",
+  "foundation/components/forms",
+  "foundation/components/button-groups",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/split-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/section",
+  "foundation/components/top-bar",
+  "foundation/components/orbit",
+  "foundation/components/reveal",
+  "foundation/components/joyride",
+  "foundation/components/clearing",
+  "foundation/components/alert-boxes",
+  "foundation/components/breadcrumbs",
+  "foundation/components/custom-forms",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/inline-lists",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/side-nav",
+  "foundation/components/sub-nav",
+  "foundation/components/switch",
+  "foundation/components/magellan",
+  "foundation/components/tables",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/dropdown";
+*/
